@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merienda', cursive;
+}
+
+li{
+    list-style: none;
+    margin-top: 0.5rem;
+}
+.main-div{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: hsl(206, 92%, 94%);
+}
+.container{
+    width: 60%;
+    height: auto;
+    margin: auto;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+    box-shadow: 1rem 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+
+}
+.container h2{
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}
+input{
+    cursor: pointer;
+}
+#submit, .btn{
+    outline: none;
+    padding: 2px 5px;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+h3{
+    color: rgb(22, 201, 22);
+}
+#show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-color: #dfe6e9;
+  margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem;
+    box-shadow: 1rem 1rem 1rem -0.7rem rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+
+}
+.hide{
+    display: none;
+}
+#show button{
+    background-color: rgba(145, 177, 219, 0.555);
+}
+.score{
+    display: none !important;
+}
+
+
+@media (max-width: 375px){
+    .container{
+        width: 75%;
+        height: auto;
+        border-radius: 1.5rem;
+    }
+    .container h2{
+        font-size: 1rem;
+    }
+    li{
+        font-size: 0.7rem;
+    }
+    #show {
+        font-size: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        background-color: #dfe6e9;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding: 1rem 1rem;
+        box-shadow: 1rem 1rem 1rem -0.7rem rgb(0 0 0 / 40%);
+        border-radius: 1rem;
+    }
+    .btn {
+        font-size: 0.6rem;
+        outline: none;
+        padding: 1px 5px;
+        text-transform: uppercase;
+        margin: 1rem 0;
+        cursor: pointer;
+        border-radius: 1rem;
+    }
+}
