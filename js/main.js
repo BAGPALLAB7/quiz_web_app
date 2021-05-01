@@ -20,7 +20,7 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
 }).then((quizDB) =>{
     quizDB=quizDB.results;
     var loadContent =() => {
-            question.innerText= quizDB[quizCount].question;
+            question.innerText= `${quizCount+1}. ${quizDB[quizCount].question}`;
 
             options=quizDB[quizCount].incorrect_answers;
 
@@ -72,10 +72,14 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
         answers.forEach((answers) => {
             if (answers.checked) {
                 answer = answers.id;
+                answers.checked=false;
             }
         });
         return answer;
     };
+    /* const unchecked = () => {
+        answers.forEach((curElement)=> curElement.checked = false );
+    } */
 
     submit.addEventListener('click', ()=>{
         const checkAnswer= getCheckAnswer();
@@ -87,6 +91,7 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
         }
         if (quizCount < quizDB.length-1) {
             quizCount++;
+            // unchecked();
             loadContent();
         }
         else{

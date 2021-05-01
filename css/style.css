@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
-
+h1{
+    margin-top: 3rem;
+    font-size: 3rem;
+    margin-bottom: -5rem;
+    text-shadow: 1rem 1rem 2rem   rgba(0, 0, 0, 0.4);
+}
 li{
     list-style: none;
     margin-top: 0.5rem;
@@ -14,8 +18,10 @@ li{
 .main-div{
     width: 100vw;
     height: 100vh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
     background-color: hsl(206, 92%, 94%);
 }
 .container{
@@ -76,6 +82,12 @@ h3{
 
 
 @media (max-width: 375px){
+    h1 {
+        margin-top: 2rem;
+        font-size: 1.7rem;
+        margin-bottom: -3rem;
+        text-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 40%);
+    }
     .container{
         width: 75%;
         height: auto;
