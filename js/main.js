@@ -11,7 +11,6 @@ const answers = document.querySelectorAll('.answer');
 const showScore = document.querySelector('#show');
 
 
-
 var quizCount=0;
 var score=0;
 
@@ -20,7 +19,7 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
 }).then((quizDB) =>{
     quizDB=quizDB.results;
     var loadContent =() => {
-            question.innerText= `${quizCount+1}. ${quizDB[quizCount].question}`;
+            question.innerText= `${quizCount+1}. ${quizDB[quizCount].question.replace(/&quot;|&#039;/g, "'")}`;
 
             options=quizDB[quizCount].incorrect_answers;
 
@@ -29,19 +28,31 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
             options.push(Correct_answer);
             // Adding values to options
             var item = options[Math.floor(Math.random() * options.length)];
-            option1.innerText=item;
+            if (item === undefined) {
+                item== " ";
+            }
+            option1.innerText=item.replace(/&quot;|&#039;/g, "'");
             options = options.filter(i => i !== item)
 
             var item = options[Math.floor(Math.random() * options.length)];
-            option2.innerText=item;
+            if (item === undefined) {
+                item== " ";
+            }
+            option2.innerText=item.replace(/&quot;|&#039;/g, "'");
             options = options.filter(i => i !== item)
 
             var item = options[Math.floor(Math.random() * options.length)];
-            option3.innerText=item;
+            if (item === undefined) {
+                item== " ";
+            }
+            option3.innerText=item.replace(/&quot;|&#039;/g, "'");
             options = options.filter(i => i !== item)
 
             var item = options[Math.floor(Math.random() * options.length)];
-            option4.innerText=item;
+            if (item === undefined) {
+                item== " ";
+            }
+            option4.innerText=item.replace(/&quot;|&#039;/g, "'");
             options = options.filter(i => i !== item)
 
             // Set right id for right answer
@@ -108,4 +119,3 @@ fetch('https://opentdb.com/api.php?amount=10').then((apidata) => {
 .catch(err =>{
     console.error(err);
 })
-
